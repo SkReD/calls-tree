@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/SkReD/calls-tree.git"
   },
-  "author": "Mikhail Shipov <ext.mshipov@tinkoff.ru> (http://tinkoff.ru)",
+  "author": "Mikhail Shipov <mshipov@yandex.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SkReD/calls-tree/issues"
