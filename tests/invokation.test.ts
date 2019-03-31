@@ -18,6 +18,5 @@ describe('Plugin', function () {
     const { code: resultCode } = transformSync(code, transformOptions)
 
     const globalScope = evalCode({ code: resultCode })
-    debugger;
   })
 })
