@@ -1,4 +1,4 @@
-import { getGlobal } from './getGlobal'
+import getGlobal from './getGlobal'
 
 export function getCalls () {
   const g = getGlobal()

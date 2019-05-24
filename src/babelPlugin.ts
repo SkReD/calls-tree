@@ -5,6 +5,7 @@ type FunctionPassContext = { filename: string, pushCallIdentifier: t.Expression,
 
 const programBodyVisitor = {
   Function (this: FunctionPassContext, path: any) {
+    path.get('body').unshiftContainer('body', t.emptyStatement())
     path.get('body').unshiftContainer('body',
       t.callExpression(this.pushCallIdentifier, [
         t.stringLiteral(h.getFunctionName(path)),
@@ -12,8 +13,6 @@ const programBodyVisitor = {
         t.stringLiteral(this.filename),
       ])
     )
-
-    path.get('body').pushContainer('body', t.emptyStatement())
 
     path.get('body').pushContainer('body',
       t.callExpression(this.popCallIdentifier, [])

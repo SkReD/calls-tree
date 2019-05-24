@@ -16,10 +16,13 @@ module.exports.pushCall = function pushCall (fnName, className, filename) {
   for (var i = 0; i <= depth; i++) {
     currentStack = currentStack[currentStack.length - 1].stack
   }
+
   currentStack.push({
     filename: filename,
     fnName: fnName,
     className: className,
     stack: [],
   })
+
+  g.__calls_depth__++
 }
