@@ -8,5 +8,9 @@ export function evalCode ({ code, filename = 'test.js' }: { code: string, filena
   const ctx = vm.createContext(scope)
   script.runInNewContext(ctx)
 
-  return ctx.global
+  const stack = ctx.global.__calls_stack__
+
+  delete ctx.global.__calls_stack__
+
+  return stack
 }

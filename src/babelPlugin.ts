@@ -8,7 +8,7 @@ const programBodyVisitor = {
     path.get('body').unshiftContainer('body', t.emptyStatement())
     path.get('body').unshiftContainer('body',
       t.callExpression(this.pushCallIdentifier, [
-        t.stringLiteral(h.getFunctionName(path)),
+        h.getFunctionNameNode(path),
         t.nullLiteral(),
         t.stringLiteral(this.filename),
       ])
